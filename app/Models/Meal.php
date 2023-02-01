@@ -12,6 +12,14 @@ class Meal extends Model
 
     public function ingredients()
     {
-        return $this->belongsToMany(Ingredient::class);
+        return $this->belongsToMany(Ingredient::class)->withPivot('measurement')->withTimestamps();
+    }
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+
+    public function area(){
+        return $this->belongsTo(Area::class);
     }
 }

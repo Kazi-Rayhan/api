@@ -22,7 +22,7 @@ return new class extends Migration
             $table->foreignId('area_id')->constrained()->cascadeOnDelete();
             $table->text('strInstructions')->nullable();
             $table->string('strMealThumb')->nullable();
-            $table->string('strTags')->nullable();
+            $table->string('strTags')->fulltext()->nullable();
             $table->string('strYoutube')->nullable();
             $table->string('strSource')->nullable();
             $table->string('strImageSource')->nullable();
